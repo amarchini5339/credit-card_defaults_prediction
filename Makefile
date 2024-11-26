@@ -38,7 +38,7 @@ notebook:
 # Export the environment to environment.yml
 freeze:
 	@echo "Exporting conda environment $(ENV_NAME) to $(ENV_FILE)..."
-	conda env export | tail -r | tail -n +2 | tail -r > environment.yml
+	conda env export --no-builds | tail -r | tail -n +2 | tail -r > environment.yml
 
 verify:
 	@echo "Ensure you are in the correct conda environment. There should be an * next to the name of the current active env."
